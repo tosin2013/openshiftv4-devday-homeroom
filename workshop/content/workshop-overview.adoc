@@ -11,11 +11,11 @@ This is a developer day workshop for OpenShift Container Platform
 == Table of Contents
 
 === Preparation
-* <<0-SettingUpClientTools.adoc#, Setting up client tools>>
+* link:setup-environment[Explore OpenShift Developer Console]
 
 === Using OpenShift Developer Console
-* <<1.ExploreDeveloperConsole.adoc#, Explore OpenShift Developer Web Console>>
-* <<2.DeployAppUsingWebConsole.adoc#, Deploy an application using Dev Console>>
+* link:exercises/1-ExploreDeveloperConsole[Explore OpenShift Developer Console]
+* link:exercises/2-DeployAppUsingWebConsole[Deploy an application using Dev Console]
 
 === Using Command line tools
 * <<3.DeployAppUsingOC.adoc#, Deploy an application using `oc` CLI>>

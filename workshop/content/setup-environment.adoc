@@ -26,4 +26,4 @@ Resource link:https://cloud.redhat.com/openshift/install[OpenShift Container Pla
 
 === Next using OpenShift Developer Console
 
-* link:content/exercises/1-ExploreDeveloperConsole[Explore OpenShift Developer Console]
+* link:exercises/1-ExploreDeveloperConsole[Explore OpenShift Developer Console]
