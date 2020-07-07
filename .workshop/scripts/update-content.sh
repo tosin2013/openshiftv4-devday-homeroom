@@ -12,7 +12,7 @@ cp .workshop/openshiftv4-devday/2.DeployAppUsingWebConsole.adoc workshop/content
 cp .workshop/openshiftv4-devday/3.DeployAppUsingOC.adoc workshop/content/exercises/3.DeployAppUsingOC.adoc
 cp .workshop/openshiftv4-devday/4.DeployAppUsingODO.adoc workshop/content/exercises/4.DeployAppUsingODO.adoc
 cp .workshop/openshiftv4-devday/5.RedHatCodeReadyWorkspaces2.adoc workshop/content/exercises/5.RedHatCodeReadyWorkspaces2.adoc
-cp .workshop/openshiftv4-devday/6.DebugApplicpioninCRW2.adoc workshop/content/exercises/6.DebugApplicpioninCRW2.adoc
+cp .workshop/openshiftv4-devday/6.DebugApplicationinCRW2.adoc workshop/content/exercises/6.DebugApplicationinCRW2.adoc
 #cp .workshop/openshiftv4-devday/README.adoc  workshop/content/workshop-overview.adoc 
 #cp .workshop/openshiftv4-devday/README.adoc  workshop/content/workshop-overview.adoc 
 #cp .workshop/openshiftv4-devday/README.adoc  workshop/content/workshop-overview.adoc 
