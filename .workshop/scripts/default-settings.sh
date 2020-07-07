@@ -11,7 +11,7 @@ WORKSHOP_DESCRIPTION=
 
 SPAWNER_REPO=openshift-homeroom/workshop-spawner
 SPAWNER_VERSION=7.1.0
-SPAWNER_MODE=learning-portal
+SPAWNER_MODE=hosted-workshop
 SPAWNER_VARIANT=production
 SPAWNER_ROLE=admin
 SPAWNER_PASSWORD=
