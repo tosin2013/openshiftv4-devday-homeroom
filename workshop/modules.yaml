@@ -21,9 +21,9 @@ modules:
         name: Deploy Multi-tiered Application
     exercises/8-ApplicationScaling:
         name: Scale up and Scale down and Idle the application
-    exercises/9.DeployBinaryArtifacts:
+    exercises/9-DeployBinaryArtifacts:
         name: Binary Deployment of a war file
-    exercises/14-UsingConfigmaps.adoc:
+    exercises/14-UsingConfigmaps:
         name: Using ConfigMaps
     exercises/15-UsingPersistentStorage:
         name: Using Persistent Storage

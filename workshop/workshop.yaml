@@ -10,4 +10,14 @@ modules:
     - exercises/4-DeployAppUsingODO
     - exercises/5-RedHatCodeReadyWorkspaces2
     - exercises/6-DebugApplicationinCRW2
+    - exercises/7-MultiTieredApp
+    - exercises/8-ApplicationScaling.adoc
+    - exercises/9-DeployBinaryArtifacts
+    - exercises/14-UsingConfigmaps
+    - exercises/15-UsingPersistentStorage
+    - exercises/17-CodePromotion
+    - exercises/19-TektonPipeline
+    - exercises/20-BlueGreenDeployment
+    - exercises/21-ABTesting
+    - exercises/24-TroubleshootingApplications
     - workshop-summary
