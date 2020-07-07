@@ -5,7 +5,7 @@ then
   git submodule add -b master https://github.com/RedHatWorkshops/openshiftv4-devday.git .workshop/openshiftv4-devday
 fi 
 
-cp .workshop/openshiftv4-devday/README.adoc  workshop/content/workshop-overview.adoc 
+#cp .workshop/openshiftv4-devday/README.adoc  workshop/content/workshop-overview.adoc 
 #cp .workshop/openshiftv4-devday/0-SettingUpClientTools.adoc  workshop/content/setup-environment.adoc
 cp .workshop/openshiftv4-devday/1.ExploreDeveloperConsole.adoc workshop/content/exercises/1-ExploreDeveloperConsole.adoc
 cp .workshop/openshiftv4-devday/2.DeployAppUsingWebConsole.adoc workshop/content/exercises/2-DeployAppUsingWebConsole.adoc
