@@ -18,35 +18,30 @@ This is a developer day workshop for OpenShift Container Platform
 * link:exercises/2-DeployAppUsingWebConsole[Deploy an application using Dev Console]
 
 === Using Command line tools
-* <<3.DeployAppUsingOC.adoc#, Deploy an application using `oc` CLI>>
-* <<4.DeployAppUsingODO.adoc#, Deploy an application using `odo` CLI>>
+* link:exercises/3-DeployAppUsingOC[Deploy an application using `oc` CLI]
+* link:exercises/4-DeployAppUsingODO[Deploy an application using `odo` CLI]
 
 === Using an IDE
-* <<5.RedHatCodeReadyWorkspaces2.adoc#, Using CodeReady Workspaces build containerized application in a container>>
-* <<6.DebugApplicationinCRW2.adoc#, Debugging an application using CodeReady Workspaces>>
+* link:5-RedHatCodeReadyWorkspaces2[Using CodeReady Workspaces build containerized application in a container]
+* link:exercises/6-DebugApplicationinCRW2[Debugging an application using CodeReady Workspaces]
 
 === Running Applications on OpenShift Cluster
-* <<7.MultiTieredApp.adoc#,Deploy a multi-tiered application>>
-* <<8.ApplicationScaling.adoc#,Scaling Application Instances>>
-* <<9.DeployBinaryArtifacts.adoc#,Deploying binary artifacts>>
-* Configuring health probes
-* Using web-hooks for build automation
-* Rollback deployments
-* Using SSL
-* <<14.UsingConfigmaps.adoc#,Using ConfigMaps>>
-* <<15.UsingPersistentStorage.adoc#,Using Persistent Storage>>
+* link:exercises/7-MultiTieredApp[Deploy a multi-tiered application]
+* link:exercises/8-ApplicationScaling[Scaling Application Instances]
+* link:exercises/9-DeployBinaryArtifacts[Deploying binary artifacts]
+* link:exercises/14-UsingConfigmaps[Using ConfigMaps]
+* link:exercises/15-UsingPersistentStorage[Using Persistent Storage]
 
 === OpenShift Serverless and Eventing
 * https://github.com/RedHatWorkshops/knative-on-ocp4[Serverless Workshop]
 
 === DevOps
-* <<17.CodePromotion.adoc#,Code promotion across environments>>
-* Creating a pipeline with Jenkins on OpenShift
-* <<19.TektonPipeline.adoc#,Code Promotion with Tekton Pipelines>>
-* <<20.BlueGreenDeployment.adoc#,Blue Green Deployments>>
-* <<21.ABTesting.adoc#,AB Testing>>
+* link:exercises/17-CodePromotion[Code promotion across environments]
+* link:exercises/19-TektonPipeline[Code Promotion with Tekton Pipelines]
+* link:exercises/20-BlueGreenDeployment[Blue Green Deployments]
+* link:exercises/21-ABTesting[Using Persistent Storage]
+
 
 === Troubleshooting
-* <<24.TroubleshootingApplications.adoc#,Troubleshoot application failures>>
-* Using Kibana to analyze application logs
-* Monitoring application metrics
+* link:24-TroubleshootingApplications[Troubleshoot application failures]
+
