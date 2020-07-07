@@ -4,10 +4,10 @@ modules:
     activate:
     - workshop-overview
     - setup-environment
-    - exercises/1.ExploreDeveloperConsole
-    - exercises/2.DeployAppUsingWebConsole
-    - exercises/3.DeployAppUsingOC
-    - exercises/4.DeployAppUsingODO
-    - exercises/5.RedHatCodeReadyWorkspaces2
-    - exercises/6.DebugApplicationinCRW2
+    - exercises/1-ExploreDeveloperConsole
+    - exercises/2-DeployAppUsingWebConsole
+    - exercises/3-DeployAppUsingOC
+    - exercises/4-DeployAppUsingODO
+    - exercises/5-RedHatCodeReadyWorkspaces2
+    - exercises/6-DebugApplicationinCRW2
     - workshop-summary
