@@ -5,8 +5,18 @@ modules:
     setup-environment:
         name: Setup Environment
         exit_sign: Start Workshop
-    exercises/01-sample-content:
-        name: Sample Content
+    exercises/1-ExploreDeveloperConsole:
+        name: Explore OpenShift Developer Console
+    exercises/2-DeployAppUsingWebConsole:
+        name: Deploy an Application Using Web Console
+    exercises/3-DeployAppUsingOC.:
+        name: Create an App from a Docker image
+    exercises/4-DeployAppUsingODO:
+        name: Deploy an Application Using odo
+    exercises//5-RedHatCodeReadyWorkspaces2:
+        name: Deploy Golang App on Red Hat CodeReady Workspaces 2
+    exercises/6-DebugApplicationinCRW2:
+        name: Debug Golang App on Red Hat CodeReady Workspaces 2
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
