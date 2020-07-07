@@ -20,10 +20,10 @@ odo help
 
 *To Access Your OpenShift Console click below*  
 
-* %console_url%
+*  [Projects](%console_url%)
 
 Resource link:https://cloud.redhat.com/openshift/install[OpenShift Container Platform 4]
 
 === Next using OpenShift Developer Console
 
-* link:1-ExploreDeveloperConsole[Explore OpenShift Developer Console]
+* link:content/exercises/1-ExploreDeveloperConsole[Explore OpenShift Developer Console]
