@@ -4,5 +4,10 @@ modules:
     activate:
     - workshop-overview
     - setup-environment
-    - exercises/01-sample-content
+    - exercises/1.ExploreDeveloperConsole.adoc
+    - exercises/2.DeployAppUsingWebConsole.adoc
+    - exercises/3.DeployAppUsingOC.adoc
+    - exercises/4.DeployAppUsingODO.adoc
+    - exercises/5.RedHatCodeReadyWorkspaces2.adoc
+    - exercises/6.DebugApplicationinCRW2.adoc
     - workshop-summary
