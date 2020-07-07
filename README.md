@@ -1,4 +1,4 @@
-LAB - AsciiDoc Sample
+OpenShift Container Platform Developer Day - Homeroom 
 =====================
 
-Sample workshop content using AsciiDoc formatting for pages.
+This workshop uses the [OpenShift Container Platform Developer Day](https://github.com/RedHatWorkshops/openshiftv4-devday) lab content to deploy a Homeroom lab. 
