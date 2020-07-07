@@ -22,6 +22,8 @@ cd openshiftv4-devday-homeroom
 .workshop/scripts/deploy-personal.sh --settings=develop
 ```
 
-oc new-project labinfra
+oc new-project workshop
+
+oc project workshop
 
 .workshop/scripts/deploy-spawner.sh hosted-workshop

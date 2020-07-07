@@ -1,1 +1,52 @@
-This is the initial landing page for your workshop. Include in this page a description of what your workshop is about.
+= OpenShift Container Platform Developer Day
+
+This is a developer day workshop for OpenShift Container Platform
+
+== Prerequisites
+
+* An OCP 4.x Cluster (currently on 4.1 cluster you will need 4.2 dev console installed)
+* A workstation with command line tools `oc`,`kubectl` and `odo` installed
+* A user account on this cluster
+
+== Table of Contents
+
+=== Preparation
+* <<0-SettingUpClientTools.adoc#, Setting up client tools>>
+
+=== Using OpenShift Developer Console
+* <<1.ExploreDeveloperConsole.adoc#, Explore OpenShift Developer Web Console>>
+* <<2.DeployAppUsingWebConsole.adoc#, Deploy an application using Dev Console>>
+
+=== Using Command line tools
+* <<3.DeployAppUsingOC.adoc#, Deploy an application using `oc` CLI>>
+* <<4.DeployAppUsingODO.adoc#, Deploy an application using `odo` CLI>>
+
+=== Using an IDE
+* <<5.RedHatCodeReadyWorkspaces2.adoc#, Using CodeReady Workspaces build containerized application in a container>>
+* <<6.DebugApplicationinCRW2.adoc#, Debugging an application using CodeReady Workspaces>>
+
+=== Running Applications on OpenShift Cluster
+* <<7.MultiTieredApp.adoc#,Deploy a multi-tiered application>>
+* <<8.ApplicationScaling.adoc#,Scaling Application Instances>>
+* <<9.DeployBinaryArtifacts.adoc#,Deploying binary artifacts>>
+* Configuring health probes
+* Using web-hooks for build automation
+* Rollback deployments
+* Using SSL
+* <<14.UsingConfigmaps.adoc#,Using ConfigMaps>>
+* <<15.UsingPersistentStorage.adoc#,Using Persistent Storage>>
+
+=== OpenShift Serverless and Eventing
+* https://github.com/RedHatWorkshops/knative-on-ocp4[Serverless Workshop]
+
+=== DevOps
+* <<17.CodePromotion.adoc#,Code promotion across environments>>
+* Creating a pipeline with Jenkins on OpenShift
+* <<19.TektonPipeline.adoc#,Code Promotion with Tekton Pipelines>>
+* <<20.BlueGreenDeployment.adoc#,Blue Green Deployments>>
+* <<21.ABTesting.adoc#,AB Testing>>
+
+=== Troubleshooting
+* <<24.TroubleshootingApplications.adoc#,Troubleshoot application failures>>
+* Using Kibana to analyze application logs
+* Monitoring application metrics
