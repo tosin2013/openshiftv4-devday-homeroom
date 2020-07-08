@@ -4,32 +4,51 @@ OpenShift Container Platform Developer Day - Homeroom
 This workshop uses the [OpenShift Container Platform Developer Day](https://github.com/RedHatWorkshops/openshiftv4-devday) lab content to deploy a Homeroom lab. 
 
 
-```
-git clone https://github.com/tosin2013/openshiftv4-devday-homeroom.git
-```
+![Workshop Overview](images/workshop-dashboard.png)
 
-
-```
-cd openshiftv4-devday-homeroom
-```
-
-```
-.workshop/scripts/update-content.sh 
-```
-# OpenShift Prerequestes 
+## OpenShift Prerequestes 
 * Install OpenShift Pipelines 
   * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
 * Install CodeReady WorkSpaces  
   * Install CodeReady Workspaces using the Operator
-  * Or install CodeReady using the script found in `.workshop/scripts/crw/install-codeready-workspaces2.sh`
+  * Or install CodeReady using the script found in `.workshop/scripts/crw/install-codeready-workspaces2.sh` -> This is not ready yet it is a work in progress. 
 
-# How to test on OpenShift
+## Instructions
+**Clone openshiftv4-devday-homeroom repo**
+```
+git clone https://github.com/tosin2013/openshiftv4-devday-homeroom.git
+```
+
+**cd into  openshiftv4-devday-homeroom folder**
+```
+cd openshiftv4-devday-homeroom
+```
+
+**run the script below to update the content from [openshiftv4-devday](https://github.com/RedHatWorkshops/openshiftv4-devday) repo**
+```
+.workshop/scripts/update-content.sh 
+```
+
+
+## How to test on OpenShift
+
+**Create personal workshop deployment**
 ```
 .workshop/scripts/deploy-personal.sh --settings=develop
 ```
 
-oc new-project workshop
+**Build workshop deployment**
+```
+.workshop/scripts/build-workshop.sh
+```
 
-oc project workshop
+**Access deployment**
+```
+oc get route/openshiftv4-devday
+```
 
-.workshop/scripts/deploy-spawner.sh hosted-workshop
+**Access the workshop**
+```
+username: workshop 
+password: workshop
+```

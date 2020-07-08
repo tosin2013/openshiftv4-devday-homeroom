@@ -2,4 +2,4 @@
 
 oc new-project code-ready-workspace
 
-oc create -f configs/crw-sub.yml
+oc create -f configs/crw-sub.ym
