@@ -4,14 +4,14 @@ This is a developer day workshop for OpenShift Container Platform
 
 == Prerequisites
 
-* An OCP 4.x Cluster (currently on 4.1 cluster you will need 4.2 dev console installed)
+* An OCP 4.4 Cluster
 * A workstation with command line tools `oc`,`kubectl` and `odo` installed
 * A user account on this cluster
 
 == Table of Contents
 
 === Preparation
-* link:setup-environment[Explore OpenShift Developer Console]
+* link:setup-environment[Setup Environment]
 
 === Using OpenShift Developer Console
 * link:exercises/1-ExploreDeveloperConsole[Explore OpenShift Developer Console]

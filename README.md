@@ -16,6 +16,12 @@ cd openshiftv4-devday-homeroom
 ```
 .workshop/scripts/update-content.sh 
 ```
+# OpenShift Prerequestes 
+* Install OpenShift Pipelines 
+  * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
+* Install CodeReady WorkSpaces  
+  * Install CodeReady Workspaces using the Operator
+  * Or install CodeReady using the script found in `.workshop/scripts/crw/install-codeready-workspaces2.sh`
 
 # How to test on OpenShift
 ```
