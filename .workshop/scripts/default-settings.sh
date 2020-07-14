@@ -1,5 +1,5 @@
 TERMINAL_IMAGE=quay.io/openshifthomeroom/workshop-terminal:3.4.2
-DASHBOARD_IMAGE=quay.io/takinosh/openshiftv4-devday:v0.0.1
+DASHBOARD_IMAGE=quay.io/openshifthomeroom/workshop-dashboard:5.0.0
 SPAWNER_IMAGE=quay.io/openshifthomeroom/workshop-spawner:7.1.0
 CONSOLE_IMAGE=quay.io/openshift/origin-console:4.4
 
@@ -23,6 +23,7 @@ DASHBOARD_VARIANT=production
 
 DOWNLOAD_URL=
 WORKSHOP_FILE=
+WORKSHOP_IMAGE=quay.io/takinosh/openshiftv4-devday:v0.0.1
 
 WORKSHOP_MEMORY=512Mi
 RESOURCE_BUDGET=medium
