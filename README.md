@@ -95,3 +95,6 @@ oc get route/openshiftv4-devday
 username: workshop 
 password: workshop
 ```
+
+
+ mkdir $HOME/.local && cd $HOME/.local &&  curl -OL https://github.com/tektoncd/cli/releases/download/v0.10.0/tkn_0.10.0_Linux_x86_64.tar.gz && tar xvzf tkn_0.10.0_Linux_x86_64.tar.gz --strip-components 1 -C $HOME/.local 
