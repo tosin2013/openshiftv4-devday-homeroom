@@ -66,6 +66,21 @@ cd openshiftv4-devday-homeroom
 ```
 .workshop/scripts/update-content.sh 
 ```
+## Deploy multi-user workshop
+**Create project**
+```
+oc new-project workshop
+```
+
+**Create hosted workshop deployment**
+```
+.workshop/scripts/deploy-spawner.sh --settings=hosted-workshop
+```
+
+**Destroy hosted workshop deployment**
+```
+.workshop/scripts/delete-spawner.sh --settings=hosted-workshop
+```
 
 
 ## How to test on OpenShift
@@ -94,4 +109,9 @@ oc get route/openshiftv4-devday
 ```
 username: workshop 
 password: workshop
+```
+
+**Destroy personal workshop deployment**
+```
+.workshop/scripts/delete-personal.sh --settings=develop
 ```

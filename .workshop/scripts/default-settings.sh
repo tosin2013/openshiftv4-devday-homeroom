@@ -16,8 +16,8 @@ SPAWNER_VARIANT=production
 SPAWNER_ROLE=admin
 SPAWNER_PASSWORD=
 
-DASHBOARD_REPO=openshift-homeroom/workshop-dashboard
-DASHBOARD_VERSION=5.0.0
+DASHBOARD_REPO=quay.io/takinosh/openshiftv4-devday
+DASHBOARD_VERSION=v0.0.1
 DASHBOARD_MODE=
 DASHBOARD_VARIANT=production
 
