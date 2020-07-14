@@ -1,0 +1,30 @@
+# TODO delete CodeReady
+
+- name: Remove operator subscription for CodeReady
+  k8s:
+    state: absent
+    merge_type:
+    - strategic-merge
+    - merge
+    definition: "{{ lookup('file', item ) | from_yaml }}"
+  loop:
+  - ./files/codeready_operatorgroup.yaml
+  - ./files/codeready_subscription.yaml
+
+# deploy codeready CR
+- name: Remove CR for CodeReady
+  k8s:
+    state: absent
+    merge_type:
+    - strategic-merge
+    - merge
+    definition: "{{ lookup('file', item ) | from_yaml }}"
+  loop:
+  - ./files/codeready_cr.yaml
+
+- name: remove the CodeReady
+  k8s:
+    state: absent
+    name: "codeready"
+    kind: Project
+    api_version: project.openshift.io/v1

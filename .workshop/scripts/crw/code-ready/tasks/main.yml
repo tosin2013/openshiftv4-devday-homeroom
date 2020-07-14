@@ -1,0 +1,13 @@
+---
+# tasks file for code-ready
+- name: Deploy CodeReady
+  include_tasks: deploy-code-ready.yml
+  when: not delete_deployment|bool
+
+- name: Configure Keyclock
+  include_tasks: configure-keycloak.yaml
+  when: not delete_deployment|bool
+
+- name: Remove CodeReady
+  include_tasks: remove-cody-ready.yml
+  when: delete_deployment|bool

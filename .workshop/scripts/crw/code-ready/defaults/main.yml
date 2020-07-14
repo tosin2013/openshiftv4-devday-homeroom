@@ -1,0 +1,6 @@
+---
+# defaults file for code-ready
+route_subdomain: ocp4.example.com  
+users: 5
+workshop_che_user_password: openshift
+delete_deployment: false

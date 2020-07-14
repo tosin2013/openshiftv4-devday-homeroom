@@ -11,7 +11,28 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
   * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
 * Install CodeReady WorkSpaces  
   * Install CodeReady Workspaces using the Operator
-  * Or install CodeReady using the script found in `.workshop/scripts/crw/install-codeready-workspaces2.sh` -> This is not ready yet it is a work in progress. 
+
+Prerequestes for Ansible 
+install ansible
+install openshift cli
+
+install the pip dependancies 
+```
+pip install kubernetes
+pip install openshift
+```
+
+### Login to OpenShift
+
+### Create  CRW deployment
+```
+ansible-playbook crw.yml -e  "delete_deployment=true"
+```
+
+### Delete CRW deployment
+```
+ansible-playbook crw.yml -e  "delete_deployment=true"
+
 
 ## Instructions
 **Clone openshiftv4-devday-homeroom repo**

@@ -1,9 +1,9 @@
-
+---
 apiVersion: org.eclipse.che/v1
 kind: CheCluster
 metadata:
   name: codeready-workspaces
-  namespace: code-ready-workspace
+  namespace: codeready
 spec:
   server:
     cheImageTag: ''
@@ -12,6 +12,10 @@ spec:
     pluginRegistryImage: ''
     tlsSupport: true
     selfSignedCert: false
+    serverMemoryRequest: '2Gi'
+    serverMemoryLimit: '6Gi'
+    customCheProperties:
+      CHE_LIMITS_WORKSPACE_IDLE_TIMEOUT: "0"
   database:
     externalDb: false
     chePostgresHostName: ''
@@ -20,10 +24,12 @@ spec:
     chePostgresPassword: ''
     chePostgresDb: ''
   auth:
-    openShiftoAuth: true
+    openShiftoAuth: false
     identityProviderImage: ''
     externalIdentityProvider: false
     identityProviderURL: ''
+    identityProviderAdminUserName: admin
+    identityProviderPassword: admin
     identityProviderRealm: ''
     identityProviderClientId: ''
   storage:
