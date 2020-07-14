@@ -6,35 +6,52 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
 
 ![Workshop Overview](images/workshop-dashboard.png)
 
-## OpenShift Prerequestes 
-* Install OpenShift Pipelines 
+## OpenShift prerequisites 
+Install OpenShift Pipelines 
   * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
 * Install CodeReady WorkSpaces  
   * Install CodeReady Workspaces using the Operator
 
-Prerequestes for Ansible 
-install ansible
-install openshift cli
-
-install the pip dependancies 
+**prerequisites for CRW Ansible role**
+* install ansible
+* install openshift cli
+* install the pip dependancies 
 ```
 pip install kubernetes
 pip install openshift
 ```
+**Login to OpenShift**
 
-### Login to OpenShift
+**Create Shortcut to ansible role**
+```
+ln -s $pwd/.workshop/scripts/crw/code-ready/  /etc/ansible/roles/
+```
 
-### Create  CRW deployment
+**Create ansible file for deployment.**
+```
+cat crw.yml 
+- hosts: localhost
+  become: yes
+  vars:
+    route_subdomain: apps.ocp4.example.com
+    users: 5
+    workshop_che_user_password: openshift
+  roles:
+    - code-ready
+
+```
+
+**To Create  CRW deployment**
 ```
 ansible-playbook crw.yml -e  "delete_deployment=true"
 ```
 
-### Delete CRW deployment
+**Delete CRW deployment**
 ```
 ansible-playbook crw.yml -e  "delete_deployment=true"
+```
 
-
-## Instructions
+## openshiftv4-devday-homeroom deployment Instructions
 **Clone openshiftv4-devday-homeroom repo**
 ```
 git clone https://github.com/tosin2013/openshiftv4-devday-homeroom.git
@@ -52,6 +69,11 @@ cd openshiftv4-devday-homeroom
 
 
 ## How to test on OpenShift
+
+**Create project**
+```
+oc new-project workshop
+```
 
 **Create personal workshop deployment**
 ```

@@ -18,6 +18,14 @@ link:https://docs.openshift.com/container-platform/4.4/cli_reference/developer_c
 odo help 
 ----
 
+*The below command we will  isntall and test the  kn cli*
+[source,bash,role=execute]
+----
+curl -OL https://github.com/tektoncd/cli/releases/download/v0.10.0/tkn_0.10.0_Linux_x86_64.tar.gz
+tar -xvf tkn_0.10.0_Linux_x86_64.tar.gz
+mv tkn /opt/app-root/bin/
+----
+
 *To Access Your OpenShift Console click below*  
 
 *  [Projects](%console_url%)
