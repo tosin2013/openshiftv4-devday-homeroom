@@ -20,6 +20,13 @@ Install OpenShift Pipelines
 pip install kubernetes
 pip install openshift
 ```
+
+**Install Service Catalog as administrator**
+[Installing Service Catalog](https://docs.openshift.com/container-platform/4.4/applications/service_brokers/installing-service-catalog.html)
+
+**Install Template Service Broker as administrator**
+[Installing the Template Service Broker](https://docs.openshift.com/container-platform/4.4/applications/service_brokers/installing-template-service-broker.html)
+
 **Login to OpenShift**
 
 **Create Shortcut to ansible role**
