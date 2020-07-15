@@ -13,7 +13,7 @@ endif::[]
 * You have access to OpenShift Web Console URL. Ask your workshop coordinator for URL if you don't have one.
 * You have credentials to login. Ask your workshop coordinator for credentials to log onto the OpenShift cluster
 * You have access to a CodeReady Workspaces URL. Ask your workshop coordinator for URL if you don't have one.
-* Completed link:exercises/5-RedHatCodeReadyWorkspaces2[Deploy Golang App on Red Hat CodeReady Workspaces 2.2]
+* Completed link:5-RedHatCodeReadyWorkspaces2[Deploy Golang App on Red Hat CodeReady Workspaces 2.2]
 
 
 
@@ -23,7 +23,7 @@ CodeReady Workspaces 2.0 provides developer environments that are Kubernetes pod
 == Exercise
 
 === CodeReady Workspaces 2 Debugging 
-* Using the application deployed in Excerise link:exercises/5-RedHatCodeReadyWorkspaces2[5. Deploy Golang App on Red Hat CodeReady Workspaces 2.2] we will debug and then deploy the application to OpenShift
+* Using the application deployed in Excerise link:5-RedHatCodeReadyWorkspaces2[5. Deploy Golang App on Red Hat CodeReady Workspaces 2.2] we will debug and then deploy the application to OpenShift
 
 === Application Debugging
 Click on the debug icon on the right hand of the screen.

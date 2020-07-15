@@ -48,4 +48,4 @@ In this lab, we logged into the cluster using Web Console and understood the lay
 
 === Next Deploy an Application
 
-* link:exercises/2-DeployAppUsingWebConsole[Deploy an Application Using Web Console]
+* link:2-DeployAppUsingWebConsole[Deploy an Application Using Web Console]
