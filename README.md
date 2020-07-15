@@ -62,10 +62,6 @@ git clone https://github.com/tosin2013/openshiftv4-devday-homeroom.git
 cd openshiftv4-devday-homeroom
 ```
 
-**run the script below to update the content from [openshiftv4-devday](https://github.com/RedHatWorkshops/openshiftv4-devday) repo**
-```
-.workshop/scripts/update-content.sh 
-```
 ## Deploy multi-user workshop
 **Create project**
 ```
@@ -77,13 +73,29 @@ oc new-project workshop
 .workshop/scripts/deploy-spawner.sh --settings=hosted-workshop
 ```
 
+**Access deployment**
+```
+oc get route/openshiftv4-devday
+```
+
+**Access the workshop**
+```
+username: workshop 
+password: workshop
+```
+
 **Destroy hosted workshop deployment**
 ```
 .workshop/scripts/delete-spawner.sh --settings=hosted-workshop
 ```
 
 
-## How to test on OpenShift
+## How to test/develop on OpenShift
+
+**run the script below to update the content from [openshiftv4-devday](https://github.com/RedHatWorkshops/openshiftv4-devday) repo**
+```
+.workshop/scripts/update-content.sh 
+```
 
 **Create project**
 ```
