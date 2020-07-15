@@ -2,3 +2,7 @@
 	path = .workshop/scripts
 	url = https://github.com/openshift-homeroom/spawner-scripts.git
 	branch = stable/2.x
+[submodule ".workshop/openshiftv4-devday"]
+	path = .workshop/openshiftv4-devday
+	url = https://github.com/RedHatWorkshops/openshiftv4-devday.git
+	branch = master
