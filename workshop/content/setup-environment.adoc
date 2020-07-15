@@ -12,6 +12,13 @@ oc help
 * Installing 
 link:https://docs.openshift.com/container-platform/4.4/cli_reference/developer_cli_odo/installing-odo.html[odo] Developer CLI (OpenShift Do Command-line Interface)
 
+*Update the ODO CLI*
+[source,bash,role=execute]
+----
+curl -L https://mirror.openshift.com/pub/openshift-v4/clients/odo/latest/odo-linux-amd64 -o /opt/app-root/bin/odo
+chmod +x /opt/app-root/bin/odo
+----
+
 *The below command we will test the odo executable*
 [source,bash,role=execute]
 ----

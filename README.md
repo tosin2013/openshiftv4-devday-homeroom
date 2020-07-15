@@ -62,10 +62,6 @@ git clone https://github.com/tosin2013/openshiftv4-devday-homeroom.git
 cd openshiftv4-devday-homeroom
 ```
 
-**run the script below to update the content from [openshiftv4-devday](https://github.com/RedHatWorkshops/openshiftv4-devday) repo**
-```
-.workshop/scripts/update-content.sh 
-```
 ## Deploy multi-user workshop
 **Create project**
 ```
@@ -83,7 +79,12 @@ oc new-project workshop
 ```
 
 
-## How to test on OpenShift
+## How to test on OpenShift for Development 
+
+**run the script below to update the content from [openshiftv4-devday](https://github.com/RedHatWorkshops/openshiftv4-devday) repo**
+```
+.workshop/scripts/update-content.sh 
+```
 
 **Create project**
 ```
