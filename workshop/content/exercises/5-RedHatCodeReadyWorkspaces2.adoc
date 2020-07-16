@@ -33,7 +33,7 @@ A *factory* is the means by which you build and share your workspace(s).
 === CodeReady Workspaces 2 Navigation 
 *Access your code ready workspace with the url provided by the workshop coordinator.*
 
- -  *URL:* http://codeready-%project_namespace%.%cluster_subdomain%/
+ -  *URL:* http://codeready-codeready.%cluster_subdomain%/
 
 *Enter username and password provided by the workshop coordinator.*
 

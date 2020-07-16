@@ -11,7 +11,7 @@ In this lab we will deploy two versions of the same application (app-a and app-b
 * Create a new project. **Remember** to substitute your username.
 
 ....
-oc new-project abtest-UserName
+oc new-project abtest-%username%
 ....
 
 * Deploy an application
@@ -274,7 +274,7 @@ oc delete all --all
 
 * Delete the project; **substituting** the username in the command below
 ....
-oc delete project abtest-UserName
+oc delete project abtest-%username%
 ....
 
 == Summary

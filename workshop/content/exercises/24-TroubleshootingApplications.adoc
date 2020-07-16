@@ -14,9 +14,8 @@ Below are common application troubleshooting techniques to use while developing 
 
 * Create new project
 ```
-$ oc new-project troubleshooting-apps-userXX
+$ oc new-project troubleshooting-apps-%username%
 ```
-NOTE: Change userXX to your username provided by your  workshop coordinator.
 
 === Image Pull Failures
 
@@ -219,7 +218,7 @@ $ oc describe pod secret-pod
 Events:
   Type     Reason       Age                From                                                 Message
   ----     ------       ----               ----                                                 -------
-  Normal   Scheduled    <unknown>          default-scheduler                                    Successfully assigned troubleshooting-apps-userXX/secret-pod to ip-10-0-159-218.us-east-2.compute.internal
+  Normal   Scheduled    <unknown>          default-scheduler                                    Successfully assigned troubleshooting-apps-%username%/secret-pod to ip-10-0-159-218.us-east-2.compute.internal
   Warning  FailedMount  25s (x8 over 88s)  kubelet, ip-10-0-159-218.us-east-2.compute.internal  MountVolume.SetUp failed for volume "myothersecret" : secret "myothersecret" not found
 ```
 

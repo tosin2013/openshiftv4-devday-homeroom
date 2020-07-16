@@ -82,6 +82,11 @@ $ oc create configmap config \
             --from-file=ui.properties
 ```
 
+Get Pod Name
+```
+$ oc get pods
+```
+
 Delete old config map pod
 ```
 $ oc delete pod configmap-demo-1-kshbh
@@ -102,7 +107,7 @@ $ oc delete -f  configmap-demo-deployment.yml
 
 Delete project 
 ```
-$ oc delete configmap-lab-%username%
+$ oc delete project configmap-lab-%username%
 ```
 
 == Summary

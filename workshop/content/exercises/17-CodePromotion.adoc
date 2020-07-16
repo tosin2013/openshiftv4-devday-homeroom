@@ -10,15 +10,15 @@ In this example we are using projects as means of separation of environments (de
 
 * Create two projects (Development and Testing)
 
-Using the knowledge you gained from the past create two projects. Name the first project *development-UserName*
+Using the knowledge you gained from the past create two projects. Name the first project *development-%username%*
 
 ....
-$ oc new-project development-UserName
+$ oc new-project development-%username%
 ....
 
-Name the second *testing-UserName*.
+Name the second *testing-%username%*.
 ....
-$ oc new-project testing-UserName
+$ oc new-project testing-%username%
 ....
 
 *Remember* to substitute the username!
@@ -28,7 +28,7 @@ $ oc new-project testing-UserName
 The following command will allow the QA project to be able to pull the container images from the Development project.
 
 ....
-$ oc policy add-role-to-group system:image-puller system:serviceaccounts:testing-UserName -n development-UserName
+$ oc policy add-role-to-group system:image-puller system:serviceaccounts:testing-%username% -n development-%username%
 ....
 
 == Deploy application
@@ -36,13 +36,13 @@ $ oc policy add-role-to-group system:image-puller system:serviceaccounts:testing
 
 * Create an application in the development project
 
-Switch over to the *development-UserName* project and deploy an application using the `php` s2i builder. You can use web console or
+Switch over to the *development-%username%* project and deploy an application using the `php` s2i builder. You can use web console or
 command line. The command line option is shown below.
 
 *Bonus points:* Clone this application to your own github account and deploy it so that you can redeploy with changes later.
 
 ....
-oc project development-UserName
+oc project development-%username%
 oc new-app openshift/php~https://github.com/RedHatWorkshops/welcome-php
 ....
 
@@ -85,7 +85,7 @@ Tags:                   1
 latest                                                                                                      
   no spec tag                                                                                               
                                                                                                             
-  * image-registry.openshift-image-registry.svc:5000/development-UserName/welcome-php@sha256:ba7dd4e757e2b20851
+  * image-registry.openshift-image-registry.svc:5000/development-%username%/welcome-php@sha256:ba7dd4e757e2b20851
 e7becc5fd2c2b38e1ee15165f2777fdc1c46ebd43c80a4
 ....
 
@@ -93,22 +93,22 @@ In general, when you are in development, you may be building your application mu
 
 Now let us assume that this container image is good and is ready to promote to QA. Let us tag this image using the `oc tag` command. We will pick up the latest image built and tested and add a tag to it as `promote-qa` as shown below:
 
-*Remember* to substitute your UserName.
+*Remember* to substitute your %username%.
 
 ....
-oc tag development-UserName/welcome-php:latest development-UserName/welcome-php:promote-qa
+oc tag development-%username%/welcome-php:latest development-%username%/welcome-php:promote-qa
 
 Tag welcome-php:promote-qa set to development-user1/welcome-php@sha256:ba7dd4e757e2b20851e7becc5fd2c2b38e1ee
 15165f2777fdc1c46ebd43c80a4.
 ....
 
-Check the following commands and replace the values of **UserName** where needed:
+Check the following commands and replace the values of **%username%** where needed:
 
 ....
-$ oc tag image-registry.openshift-image-registry.svc:5000/development-UserName/welcome-php
-@sha256:99fd4920719fc8e7e9d4ff1c4e9a87b22ca802fdce006901a0cdd19fb9f2e14c development-UserName/welcome-php:promote-qa
+$ oc tag image-registry.openshift-image-registry.svc:5000/development-%username%/welcome-php
+@sha256:99fd4920719fc8e7e9d4ff1c4e9a87b22ca802fdce006901a0cdd19fb9f2e14c development-%username%/welcome-php:promote-qa
 
-Tag welcome-php:promote-qa set to image-registry.openshift-image-registry.svc:5000/development-UserName/welcome
+Tag welcome-php:promote-qa set to image-registry.openshift-image-registry.svc:5000/development-%username%/welcome
 -php@sha256:99fd4920719fc8e7e9d4ff1c4e9a87b22ca802fdce006901a0cdd19fb9f2e14c
 ....
 
@@ -151,12 +151,12 @@ Now you can switch over to the QA project and deploy the container image that we
 Also expose service to create route for this project and *remember* to substitute username.
 
 ....
-oc project testing-UserName
-oc new-app development-UserName/welcome-php:promote-qa
+oc project testing-%username%
+oc new-app development-%username%/welcome-php:promote-qa
 oc expose service welcome-php
 ....
 
-Test this application in the QA project. Note that we deployed the container image (`development-UserName/welcome-php:promote-qa`) from the development project without rebuilding the code.
+Test this application in the QA project. Note that we deployed the container image (`development-%username%/welcome-php:promote-qa`) from the development project without rebuilding the code.
 
 *Bonus points*: Make changes to your git repo (to `index.php`) and deploy it to development first. Notice that your changes are seen only in development project. Repeat the changes a couple of times. Now find the `latest` imagestream and tag it as `promote-qa`. Watch out that the QA project gets redeployed when you
 update the new tag.

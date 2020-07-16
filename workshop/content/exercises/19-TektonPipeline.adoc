@@ -34,9 +34,9 @@ We will continue with an example that we used in the lab <<17.CodePromotion.adoc
 
 * We have created two projects with names for Development and QA in the previous lab. Switch the context to development project
 
-CAUTION:  Substitute UserName with your value below
+CAUTION:  Substitute %username% with your value below
 ----
-$ oc project development-UserName
+$ oc project development-%username%
 ----
 
 * OpenShift Pipelines is installed and managed by an operator. This operator also installs a bunch of cluster level tasks. Let us look at the cluster tasks by running
@@ -186,10 +186,10 @@ image::images/tekton2.png[image,2000]
 
 The following command will allow `pipeline` service account in development project to be able to deploy app in the QA project.
 
-CAUTION:  Substitute UserName with your value below
+CAUTION:  Substitute %username% with your value below
 
 ----
-$ oc adm policy add-role-to-user admin system:serviceaccount:development-UserName:pipeline -n testing-UserName
+$ oc adm policy add-role-to-user admin system:serviceaccount:development-%username%:pipeline -n testing-%username%
 ----
 
 == Running Pipeline
@@ -202,18 +202,18 @@ Fill the parameters and resource values. You will have to press on image:images/
 
 image::images/tekton4.png[image,2000]
 
-CAUTION:  Substitute UserName with your value below
+CAUTION:  Substitute %username% with your value below
 
 **Resources**
 
 * `source-code` value `https://github.com/RedHatWorkshops/welcome-php` and `Revision` as `master`
-* `container-image` value `image-registry.openshift-image-registry.svc:5000/development-UserName/welcome-php:latest`
+* `container-image` value `image-registry.openshift-image-registry.svc:5000/development-%username%/welcome-php:latest`
 
 **Parameters**
 
 * `APP_NAME` value `welcome-php`
-* `DEV_PROJ` value `development-UserName`
-* `QA_PROJ` value `testing-UserName`
+* `DEV_PROJ` value `development-%username%`
+* `QA_PROJ` value `testing-%username%`
 
 
 You can verify that the corresponding resources are created on command line by running
@@ -222,7 +222,7 @@ You can verify that the corresponding resources are created on command line by r
 $ tkn resources list
 NAME           TYPE    DETAILS
 git-gboh0a     git     url: https://github.com/RedHatWorkshops/welcome-php
-image-9ehc45   image   url: image-registry.openshift-image-registry.svc:5000/development-UserName/welcome-php
+image-9ehc45   image   url: image-registry.openshift-image-registry.svc:5000/development-%username%/welcome-php
 ----
 
 and the running pipeline

@@ -15,10 +15,8 @@ In this lab we will learn to deploy a multi-tiered application on OpenShift. Thi
 
 Create a new project 
 
-CAUTION:  Substitute UserName with your value below
-
 ....
-oc new-project multitier-UserName
+oc new-project multitiered-%username%
 ....
 
 We will use MongoDB. You can deploy MongoDB using command line as follows:
@@ -253,10 +251,8 @@ oc delete secret mongodb
 
 * Delete project/namespace
 
-CAUTION: Substitute UserName before running the command
-
 ----
-oc delete project multitiered-UserName
+oc delete project multitiered-%username%
 ----
 
 

@@ -31,7 +31,7 @@ the second application (green).
 *Remember* to substitute the username
 
 ....
-$ oc new-project bluegreen-UserName --display-name="Blue Green Project" --description="Blue Green Project"
+$ oc new-project bluegreen-%username% --display-name="Blue Green Project" --description="Blue Green Project"
 ....
 
 == Deploy Blue Version and Test
@@ -224,7 +224,7 @@ oc delete all --all
 
 * Delete the project; **substituting** the username in the command below
 ....
-oc delete project bluegreen-UserName
+oc delete project bluegreen-%username%
 ....
 
 == Summary

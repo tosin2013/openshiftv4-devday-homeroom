@@ -11,7 +11,7 @@ modules:
     - exercises/5-RedHatCodeReadyWorkspaces2
     - exercises/6-DebugApplicationinCRW2
     - exercises/7-MultiTieredApp
-    - exercises/8-ApplicationScaling.adoc
+    - exercises/8-ApplicationScaling
     - exercises/9-DeployBinaryArtifacts
     - exercises/14-UsingConfigmaps
     - exercises/15-UsingPersistentStorage
