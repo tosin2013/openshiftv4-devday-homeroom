@@ -148,7 +148,7 @@ $ oc get route
 
 Open url in webpage
 
-Add the following to the end of the url `/?name=yourname` and press  `Enter`
+Add the following to the end of the url `/?name=mycustommessage` and press  `Enter`
 
 
 == Summary
