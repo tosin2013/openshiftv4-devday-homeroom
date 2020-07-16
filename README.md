@@ -6,6 +6,12 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
 
 ![Workshop Overview](images/workshop-dashboard.png)
 
+
+## Current quay.io version for hosted-workshops
+```
+quay.io/takinosh/openshiftv4-devday:v0.0.4
+```
+
 ## OpenShift prerequisites 
 Install OpenShift Pipelines 
   * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
