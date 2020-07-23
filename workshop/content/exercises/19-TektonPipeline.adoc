@@ -34,9 +34,9 @@ We will continue with an example that we used in the lab link:17-CodePromotion[C
 
 * We have created two projects with names for Development and QA in the previous lab. 
 
-CAUTION:  Substitute UserName with your value below
+CAUTION:  Substitute %username% with your value below
 ----
-$ oc project development-UserName
+$ oc project development-%username%
 ----
 
 * OpenShift Pipelines is installed and managed by an operator. This operator also installs a bunch of cluster level tasks. Let us look at the cluster tasks by running
@@ -254,8 +254,14 @@ and the running pipeline
 ----
 $ tkn pipelinerun list
 NAME                            STARTED          DURATION   STATUS             
-multi-project-pipeline-77eisq   23 seconds ago   ---        Running
+multi-project-pipeline-qzv2et   23 seconds ago   ---        Running
 ----
+
+Run the command below to talk the logs of the pipeline build.
+----
+$ tkn pipelinerun logs -f  -a multi-project-pipeline-qzv2et
+----
+
 
 Developer Console also shows the running pipeline
 
@@ -270,19 +276,7 @@ image::images/tekton8.png[image,2000]
 As the pipeline gets to deploy steps you will note the application gets redeployed. You can notice the pod getting redeployed on the developer console.
 
 
-== Tekton cli tasks
 
-Run the command below to get the status of the pipeline run 
-----
-$ tkn pipelinerun  list
-NAME                            STARTED          DURATION    STATUS
-multi-project-pipeline-qzv2et   23 minutes ago   3 minutes   Succeeded
-----
-
-Run the comand below to talk the logs of the pipeline build.
-----
-$ tkn pipelinerun logs -f  -a multi-project-pipeline-qzv2et
-----
 
 == Delete projects
 
