@@ -32,12 +32,56 @@ We will continue with an example that we used in the lab <<17.CodePromotion.adoc
 
 == Create a Tekton Pipeline
 
-* We have created two projects with names for Development and QA in the previous lab. Switch the context to development project
+* We have created two projects with names for Development and QA in the previous lab. 
 
-CAUTION:  Substitute %username% with your value below
+Switch the context to development project
+
+[source,bash,role=execute]
 ----
-$ oc project development-%username%
+oc new-project development-%username%
+oc new-project testing-%username%
+oc project development-%username%
 ----
+
+== We will now configure our projects for the pipeline 
+
+* download configure-projects script
+
+[source,bash,role=execute]
+----
+curl -OL https://raw.githubusercontent.com/RedHatWorkshops/welcome-php/master/tekton-pipeline/configure-projects.sh
+chmod +x configure-projects.sh
+----
+
+* run configure projects script to configure enviornment
+
+Create development-%username% project 
+[source,bash,role=execute]
+----
+./configure-projects.sh development-%username% welcome-php  create
+----
+
+Create testing-%username% project 
+[source,bash,role=execute]
+----
+./testing-projects.sh testing-%username% welcome-php  create
+----
+
+
+* Optionally: To clean up projects
+
+Delete development-%username% project 
+[source,bash,role=execute]
+----
+./configure-projects.sh development-%username% welcome-php  delete
+----
+
+Delete testing-%username% project 
+[source,bash,role=execute]
+----
+./testing-projects.sh testing-%username% welcome-php  delete
+----
+
 
 * OpenShift Pipelines is installed and managed by an operator. This operator also installs a bunch of cluster level tasks. Let us look at the cluster tasks by running
 
@@ -91,27 +135,28 @@ spec:
       description: QA  project name
       name: QA_PROJ
       type: string
+    - default: >-
+        --patch={"spec":{"template":{"spec":{"containers":[{"name":"$(params.APP_NAME)","image":"image-registry.openshift-image-registry.svc:5000/$(params.QA_PROJ)/$(params.APP_NAME):promote-qa"}]}}}}
+      description: patch image
+      name: PATCH_IMAGE
+      type: string
   resources:
-    - name: source-code
+    - name: app-git
       type: git
-    - name: container-image
+    - name: app-image
       type: image
   tasks:
-    - name: build-in-dev
+    - name: build-app
       params:
-        - name: MINOR_VERSION
-          value: '2'
-        - name: PATH_CONTEXT
-          value: .
         - name: TLSVERIFY
           value: 'false'
       resources:
         inputs:
           - name: source
-            resource: source-code
+            resource: app-git
         outputs:
           - name: image
-            resource: container-image
+            resource: app-image
       taskRef:
         kind: ClusterTask
         name: s2i-php
@@ -121,9 +166,15 @@ spec:
           value:
             - rollout
             - latest
-            - dc/$(params.APP_NAME)
+            - dc/$(params.APP_NAME)-dc
+            - '-n'
+            - $(params.DEV_PROJ)
+      resources:
+        inputs:
+          - name: source
+            resource: app-git
       runAfter:
-        - build-in-dev
+        - build-app
       taskRef:
         kind: ClusterTask
         name: openshift-client
@@ -133,9 +184,23 @@ spec:
           value:
             - tag
             - '$(params.DEV_PROJ)/$(params.APP_NAME):latest'
-            - '$(params.DEV_PROJ)/$(params.APP_NAME):promote-qa'
+            - '$(params.QA_PROJ)/$(params.APP_NAME):promote-qa'
       runAfter:
         - deploy-in-dev
+      taskRef:
+        kind: ClusterTask
+        name: openshift-client
+    - name: update-qa-deployment-image
+      params:
+        - name: ARGS
+          value:
+            - patch
+            - dc/$(params.APP_NAME)-dc
+            - $(params.PATCH_IMAGE)
+            - '-n'
+            - $(params.QA_PROJ)
+      runAfter:
+        - tag-image
       taskRef:
         kind: ClusterTask
         name: openshift-client
@@ -145,15 +210,18 @@ spec:
           value:
             - rollout
             - latest
-            - dc/$(params.APP_NAME)
+            - dc/$(params.APP_NAME)-dc
             - '-n'
             - $(params.QA_PROJ)
+      resources:
+        inputs:
+          - name: source
+            resource: app-git
       runAfter:
-        - tag-image
+        - update-qa-deployment-image
       taskRef:
         kind: ClusterTask
         name: openshift-client
-
 ----
 
 * `taskRef` are pointing to `ClusterTask`
@@ -162,12 +230,12 @@ spec:
 * Parameters `APP_NAME`, `DEV_PROJ` and `QA_PROJ` are used to supply your own values or application name, development project and qa project respectively while running the pipeline
 * `runAfter` allows you to sequence the tasks per your needs
 
-The above https://raw.githubusercontent.com/RedHatWorkshops/openshiftv4-devday/master/tekton-pipeline.yaml[pipeline] is provided to you so that you can create it directly using CLI.
+The above https://raw.githubusercontent.com/RedHatWorkshops/welcome-php/master/tekton-pipeline/tekton-pipeline.yml[pipeline] is provided to you so that you can create it directly using CLI.
 
 * Create pipeline running the following command
 
 ----
-$ oc create -f https://raw.githubusercontent.com/RedHatWorkshops/openshiftv4-devday/master/tekton-pipeline.yaml
+$ oc create -f https://raw.githubusercontent.com/RedHatWorkshops/welcome-php/master/tekton-pipeline/tekton-pipeline.yml
 ----
 
 Run `tkn pipelines list` to verify
@@ -245,5 +313,10 @@ image::images/tekton8.png[image,2000]
 
 As the pipeline gets to deploy steps you will note the application gets redeployed. You can notice the pod getting redeployed on the developer console.
 
+== Delete projects
 
-
+CAUTION:  Substitute %username% with your value below
+----
+$ oc delete project development-%username%
+$ oc delete project testing-%username%
+----
