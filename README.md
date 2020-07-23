@@ -12,6 +12,9 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
 quay.io/takinosh/openshiftv4-devday:v0.0.5
 ```
 
+## Tested on 
+* RHPDS - "OpenShift 4.4 Workshop"
+
 ## OpenShift prerequisites 
 Install OpenShift Pipelines 
   * [Installing OpenShift Pipelines](https://docs.openshift.com/container-platform/4.4/pipelines/installing-pipelines.html)
@@ -33,7 +36,7 @@ pip install openshift
 [Installing Service Catalog](https://docs.openshift.com/container-platform/4.4/applications/service_brokers/installing-service-catalog.html)
 
 **Install Template Service Broker as administrator**  
-[Installing the Template Service Broker](https://docs.openshift.com/container-platform/4.4/applications/service_brokers/installing-template-service-broker.html)=
+[Installing the Template Service Broker](https://docs.openshift.com/container-platform/4.4/applications/service_brokers/installing-template-service-broker.html)
 
 **Create Shortcut to ansible role**
 ```
