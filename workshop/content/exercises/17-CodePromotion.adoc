@@ -61,14 +61,37 @@ welcome-php   image-registry.openshift-image-registry.svc:5000/development-user1
 econds ago
 ....
 
+Lets monitor the build progress 
+----
+$ oc logs bc/welcome-php -f
+...
+Pushing image image-registry.openshift-image-registry.svc:5000/development-user5/welcome-php:latest ...
+Getting image source signatures
+Copying blob sha256:ddffe1163fdc80f5136e19d0a5ed566fa4388722ec8c640501644fc0d9c69926
+Copying blob sha256:f8a8d6ccf58e36e557a55b57a44daa973c61a637be5cab2fb38e3c9b737151df
+Copying blob sha256:a03401a44180b6581a149376d6fd2d5bd85d938445fd5b5ad270e14ddde4937c
+Copying blob sha256:dd3691704af8eb0ef955519328f2e6852ba398b0e316255913e2bfa0e6e57a4b
+Copying blob sha256:5b76785eb746989e70f89e121d1223fe55a48b3e51ea5da51ed9e40e1ce0d15b
+Copying blob sha256:bb0da44cdbced801240e74437a617d4fe0e39c29cf3bbabb7f6a96d2620cfeaa
+Copying config sha256:790efe026da258d74c428b99b327b506593dd72b946668ec8a1196d67d61b7a8
+Writing manifest to image destination
+Storing signatures
+Successfully pushed image-registry.openshift-image-registry.svc:5000/development-user5/welcome-php@sha256:9fa6414bbf96dc
+04811cd96311a9de2d0a017935617233f610a593c54ff8275a
+Push successful
+---
+
 Now describe this imagestream. It will show you full image id and the current tags assigned to that image. You'll notice that only `latest` is assigned right now.
 
 ....
 $ oc get is                                                                            
 NAME          IMAGE REPOSITORY                                                                 TAGS     UPDA
 TED                                                                                                         
-welcome-php   image-registry.openshift-image-registry.svc:5000/development-user1/welcome-php   latest   Abou
-t a minute ago                                                                                              
+welcome-php   image-registry.openshift-image-registry.svc:5000/development-user1/welcome-php   latest   About a minute ago                                                                                              
+---
+
+Describe image stream 
+---
 [user2@cli-2-b2pms ~]$ oc describe is welcome-php                                                           
 Name:                   welcome-php                                                                         
 Namespace:              development-user1                                                                   
