@@ -24,7 +24,7 @@ pip install openshift
 
 **Create Shortcut to ansible role**
 ```
-ln -s $pwd/.workshop/scripts/crw/code-ready/  /etc/ansible/roles/
+ln -s $(pwd)/.workshop/scripts/crw/code-ready/  /etc/ansible/roles/
 ```
 
 **Create ansible file for deployment.**
@@ -43,7 +43,7 @@ cat crw.yml
 
 **To Create  CRW deployment**
 ```
-ansible-playbook crw.yml -e  "delete_deployment=true"
+ansible-playbook crw.yml -e  "delete_deployment=false"
 ```
 
 **Delete CRW deployment**
