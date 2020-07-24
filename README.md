@@ -9,7 +9,7 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
 
 ## Current quay.io version for hosted-workshops
 ```
-quay.io/takinosh/openshiftv4-devday:v0.0.6
+quay.io/takinosh/openshiftv4-devday:v0.0.7
 ```
 
 ## Tested on 
@@ -96,8 +96,8 @@ oc get route/openshiftv4-devday
 
 **Access the workshop**
 ```
-username: workshop 
-password: workshop
+username: openshiftusername
+password: openshiftpassword
 ```
 
 **Destroy hosted workshop deployment**
