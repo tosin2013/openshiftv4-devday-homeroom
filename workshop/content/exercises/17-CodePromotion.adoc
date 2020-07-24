@@ -62,7 +62,7 @@ econds ago
 ....
 
 Lets monitor the build progress 
-----
+....
 $ oc logs bc/welcome-php -f
 ...
 Pushing image image-registry.openshift-image-registry.svc:5000/development-user5/welcome-php:latest ...
@@ -79,7 +79,7 @@ Storing signatures
 Successfully pushed image-registry.openshift-image-registry.svc:5000/development-user5/welcome-php@sha256:9fa6414bbf96dc
 04811cd96311a9de2d0a017935617233f610a593c54ff8275a
 Push successful
----
+....
 
 Now describe this imagestream. It will show you full image id and the current tags assigned to that image. You'll notice that only `latest` is assigned right now.
 

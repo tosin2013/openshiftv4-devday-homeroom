@@ -197,7 +197,7 @@ $ oc create -f https://raw.githubusercontent.com/RedHatWorkshops/welcome-php/mas
 Run `tkn pipelines list` to verify
 
 ----
-% tkn pipeline list
+$ tkn pipeline list
 NAME                     AGE             LAST RUN                        STARTED          DURATION    STATUS
 multi-project-pipeline   2 minutes ago   multi-project-pipeline-hbff55   12 minutes ago   2 minutes   Succeeded
 ----
@@ -274,9 +274,6 @@ Click on the a taskrun to view its logs
 image::images/tekton8.png[image,2000]
 
 As the pipeline gets to deploy steps you will note the application gets redeployed. You can notice the pod getting redeployed on the developer console.
-
-
-
 
 == Delete projects
 
