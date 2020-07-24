@@ -38,6 +38,7 @@ When you explore a deployed application, make sure you look at the corresponding
 * Log into Developer Console as explained link:1-ExploreDeveloperConsole[here] and create a project, if you have not already done so.
 
 * From the menu, choose `From Git` option
+
 image::devconsoleapp1.png[image]
 
 * The next screen `Import from git` allows you to deploy an application from a git repository. 
