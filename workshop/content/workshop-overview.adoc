@@ -39,7 +39,7 @@ This is a developer day workshop for OpenShift Container Platform
 * link:exercises/17-CodePromotion[Code promotion across environments]
 * link:exercises/19-TektonPipeline[Code Promotion with Tekton Pipelines]
 * link:exercises/20-BlueGreenDeployment[Blue Green Deployments]
-* link:exercises/21-ABTesting[Using Persistent Storage]
+* link:exercises/21-ABTesting[AB Testing]
 
 
 === Troubleshooting
