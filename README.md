@@ -13,7 +13,7 @@ quay.io/takinosh/openshiftv4-devday:v0.0.7
 ```
 
 ## Tested on 
-* RHPDS - "OpenShift 4.4 Workshop"
+* RHPDS - "OpenShift 4.4 Workshop" using Let’s Encrypt Certificate:
 
 ## OpenShift prerequisites 
 Install OpenShift Pipelines 
@@ -26,8 +26,8 @@ Install OpenShift Pipelines
 * install openshift cli
 * install the pip dependancies 
 ```
-pip install kubernetes
-pip install openshift
+pip3 install kubernetes
+pip3 install openshift
 ```
 
 **Login to OpenShift**
