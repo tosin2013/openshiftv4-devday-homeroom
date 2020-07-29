@@ -42,7 +42,7 @@ cd openshiftv4-odo-workshop-backend/
 
 ```
 odo login <ocp server API uri> -u <user> -p <password>
-odo project create kiosk
+odo project create kiosk-%username%
 odo create nodejs backend
 odo push
 ```
