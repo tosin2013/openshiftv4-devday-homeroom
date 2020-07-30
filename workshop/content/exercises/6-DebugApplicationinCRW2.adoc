@@ -26,7 +26,11 @@ CodeReady Workspaces 2.0 provides developer environments that are Kubernetes pod
 * Using the application deployed in Excerise link:5-RedHatCodeReadyWorkspaces2[5. Deploy Golang App on Red Hat CodeReady Workspaces 2.2] we will debug and then deploy the application to OpenShift
 
 === Installing Delve Debugger
-Delve is a debugger for the Go programming language. We will need it to debug our application. Open a terminal and change to your root directory. Follow the https://github.com/go-delve/delve/blob/master/Documentation/installation/linux/install.md[installation instructions for Delve].
+Delve is a debugger for the Go programming language. We need to install it so we can debug our application. 
+
+```
+go get github.com/go-delve/delve/cmd/dlv
+```
 
 === Application Debugging
 Click on the debug icon on the right hand of the screen.
