@@ -9,8 +9,8 @@ modules:
         name: Explore OpenShift Developer Console
     exercises/2-DeployAppUsingWebConsole:
         name: Deploy an Application Using Web Console
-    exercises/3-DeployAppUsingOC.:
-        name: Create an App from a Docker image
+    exercises/3-DeployAppUsingOC:
+        name: Deploy an application using `oc` CLI
     exercises/4-DeployAppUsingODO:
         name: Deploy an Application Using odo
     exercises/5-RedHatCodeReadyWorkspaces2:

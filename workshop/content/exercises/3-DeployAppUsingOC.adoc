@@ -2,16 +2,26 @@
 
 == Prerequisites
 * You need API URL to the cluster. Ask your workshop coordinator, if you don't have one
-* You need credentials (UserName and Password) to login to the cluster
-* Login to the cluster running
+* You need credentials (%username% and Password) to login to the cluster
+* Test login status in terminal 
+
+[source,bash,role=execute]
 ```
-$ oc login {CLUSTER_APIURL}
+oc whoami 
+```
+
+* If `oc whoami` fails to login.  Login to the cluster by running the command below. 
+
+NOTE: Ask your instructor for the OpenShift endpoint
+
+```
+$ oc login https://api.first.40.ocpcloud.com:6443 
 The server uses a certificate signed by an unknown authority.                                                                                                      
 You can bypass the certificate check, but any data you send to the server could be intercepted by others.                                                          
 Use insecure connections? (y/n): y                                                                                                                                 
                                                                                                                                                                    
 Authentication required for https://api.first.40.ocpcloud.com:6443 (openshift)                                                                                     
-Username: UserName                                                                                                                                                     
+Username: %username%                                                                                                                                                     
 Password:                                                                                                                                                          
 Login successful.                                                                                                                                                  
                                                                                                                                                                    
@@ -28,17 +38,13 @@ In this lab you will learn to use openshift CLI to deploy an application.
 == Deploy using OC
 
 *Step 1: Add a new project from command line*
-
-*Note:* Please replace *UserName* with the username assigned to you in the commands below. Project names in OpenShift must be unique across the cluster. In order not to have an overlap between all the users, we are using **UserName** to enforce uniqueness in the name.
-
 ....
-$ oc new-project mycliproject-UserName --description="My CLI Project" --display-name="CLI Project"
+$ oc new-project mycliproject-%username% --description="My CLI Project" --display-name="CLI Project"
 ....
 
-**Note:** If you get an error message `The ProjectRequest "mycliproject-UserName" is invalid`, it means you have not substituted your UserName!!
+**Note:** If you get an error message `The ProjectRequest "mycliproject-%username%" is invalid`, it means you have not substituted your %username%!!
 
 Upon project creation, OpenShift will automatically switch to the newly created project/namespace. If you wish to view the list of projects, run the following command:
-
 ....
 $ oc get projects
 ....
@@ -50,7 +56,7 @@ You can also check the status of the project by running the following command. I
 ....
 $ oc status
 
-In project CLI Project (mycliproject-UserName)
+In project CLI Project (mycliproject-%username%)
 
 You have no services, deployment configs, or build configs.
 Run 'oc new-app' to create an application.
@@ -137,7 +143,7 @@ Check the route created for your application now
 ```
 $ oc get route                                                                                                                                
 NAME      HOST/PORT                                               PATH   SERVICES   PORT       TERMINATION   WILDCARD                                              
-welcome   welcome-mycliproject-UserName.apps.first.40.ocpcloud.com          welcome    8080-tcp                 None  
+welcome   welcome-mycliproject-%username%.apps.first.40.ocpcloud.com          welcome    8080-tcp                 None  
 ```
 
 Note the URL listed under `HOST/PORT`.
@@ -198,10 +204,10 @@ You will notice that it has deleted the imagestream for the application, the dep
 
 You can run `oc get all` again to make sure the project is empty.
 
-You can now delete the project by running. Substitute your **UserName** in the command below.
+You can now delete the project by running. Substitute your **%username%** in the command below.
 
 ```
-oc delete project mycliproject-UserName
+oc delete project mycliproject-%username%
 ```
 
 Congratulations!! You now know how to create a project, an application using an external docker image and navigate around. Get ready for more
