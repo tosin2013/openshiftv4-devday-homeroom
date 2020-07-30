@@ -9,7 +9,7 @@ This workshop uses the [OpenShift Container Platform Developer Day](https://gith
 
 ## Current quay.io version for hosted-workshops
 ```
-quay.io/takinosh/openshiftv4-devday:v0.0.8
+quay.io/takinosh/openshiftv4-devday:v0.0.9
 ```
 
 ## Tested on 
