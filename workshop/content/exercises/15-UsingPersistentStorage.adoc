@@ -29,18 +29,19 @@ With OpenShift files that live on the container instance are ephemeral. This mea
 [options="header,footer"]
 |=======================
 |Volume Plug-in|ReadWriteOnce   |ReadOnlyMany    |  ReadWriteMany
-|AWS EBS    |[*] | [ ] | [ ]
-|Azure File    |[*] | [ *] | [* ]
-|Azure Disk    |[*] | [ ] | [ ]
-|Cinder   |[*] | [ ] | [ ]
-|Fibre Channel  |[*] | [*] | [ ]
-|GCE Persistent Disk |[*] | [ ] | [ ]
-|HostPath  |[*] | [ ] | [ ]
-|iSCSI   |[*] | [*] | [ ]
-|Local volume  |[*] | [ ] | [ ]
-|NFS   | [*] | [*] | [*]
-| Red Hat OpenShift Container Storage| [*] | [ ] | [*]
-|vSphere    |[*] | [ ] | [ ]
+|AWS EBS    | ✓ | ✗ | ✗
+|Azure File    | ✓ |  ✓ | ✓
+|Azure Disk    | ✓ | ✗ | ✗
+|Cinder   |  ✓ | ✗ | ✗
+|Fibre Channel  | ✓ | ✓ | ✗
+|GCE Persistent Disk | ✓ | ✗ | ✗
+|HostPath  | ✓ | ✗ | ✗
+|iSCSI   | ✓ | ✓ | ✗
+|Local volume  |✓ | ✗ | ✗
+|NFS   | ✓ | ✓ | ✓
+| Red Hat OpenShift Container Storage| ✓ | ✗ | ✓
+|vSphere    |  ✓ | ✗ | ✗
+| | | |
 |=======================
 
 
